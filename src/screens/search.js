@@ -75,7 +75,7 @@ class Search extends Component {
                                         <Link to={`/profile/${user.login}`}>About</Link>
                                     <br />
                                     </div>
-                                </div>)
+                                </div>) 
                         )
                     }
                 </div>
