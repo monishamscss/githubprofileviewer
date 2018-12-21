@@ -11,11 +11,9 @@ class Search extends Component {
             users: null
         };
         this.getUserName = this.getUserName.bind(this);
-        //this.onSubmit = this.onSubmit.bind(this)
     }
 
     getUserName = (props) => {
-        //console.log(props)
         this.setState({
             userName: props
         });
@@ -44,14 +42,20 @@ class Search extends Component {
     render() {
         let fontStyle = {
             fontSize: 14,
-            fontFamily: this.state.userName === '' ? 'FontAwesome' : 'inherit',
+            fontFamily:'inherit',
             margin: 20,
             lineHeight: 2,
         };
         return (
             <div>
+      <table>
+          <tr>
+     <td><img src="github.jpg" width="42" height="42"/></td>
+      <td><font size="6">GitHub Profile Viewer</font></td>
+         </tr>
+    </table>
                 <form onSubmit={this.onSubmit.bind(this)}>
-                    <input placeholder="&#xf002;  Search Here..."
+                    <input placeholder="  Search Here & Enter"
                         style={fontStyle} size="35"
                         onChange={(e) => this.getUserName(e.target.value)}
                         value={this.state.userName}
@@ -61,7 +65,7 @@ class Search extends Component {
                     {this.state.users == null                       
                         ? (
                             <div className="col-sm-6">
-                                please search
+                                Please Search...
                                 <br />
                             </div>
                         )
@@ -72,7 +76,7 @@ class Search extends Component {
                                         <img className="img-circle" width="80" height="80" src={user.avatar_url} />
                                     </div>
                                     <div className="col-sm-6">
-                                        <Link to={`/profile/${user.login}`}>About</Link>
+                                        <Link to={`/profile/${user.login}`}>{user.login}</Link>
                                     <br />
                                     </div>
                                 </div>) 

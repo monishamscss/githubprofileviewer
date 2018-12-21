@@ -4,5 +4,6 @@ const URL = "https://api.github.com/"
 
 export default {
     search: URL + "search/users?q=",
-    bio: URL + "users/"
+    bio: URL + "users/",
+    repo: "/repos"
 }
